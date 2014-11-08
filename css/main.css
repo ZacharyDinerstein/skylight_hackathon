@@ -1,3 +1,13 @@
 .main-video {
 	width: 100%;
+	position: fixed;
+	z-index: 1;
+}
+
+.side-video {
+	position: relative;
+	top: 20px;
+	left: 20px;
+	width: 25%;
+	z-index: 2;
 }
