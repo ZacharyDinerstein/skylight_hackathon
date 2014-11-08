@@ -1,17 +1,27 @@
-div {
+/*div {
 	background: white;
 	height: 100px;
 	width: 100px;
+}*/
+
+body {
+	background-color: #333;
+}
+
+main {
+	max-height: 100px;
+	position: relative;
 }
 
 .main-video {
 	width: 100%;
-	position: fixed;
+	max-width: 1390px;
+	position: absolute;
 	z-index: -1;
 }
 
 .side-video {
-	position: relative;
+	position: absolute;
 	top: 20px;
 	left: 20px;
 	width: 25%;	
