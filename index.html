@@ -6,10 +6,39 @@
 	<link rel="stylesheet" href="css/bootstrap.min.css">
 	<link rel="stylesheet" href="css/main.css">
 	<title>skylight</title>
+	<script>
+      // ensure the web page (DOM) has loaded
+      document.addEventListener("DOMContentLoaded", function () {
+ 
+         // Create a popcorn instance by calling Popcorn("#id-of-my-video")
+         var pop = Popcorn(".main-video");
+ 
+         // add a footnote at 2 seconds, and remove it at 6 seconds
+         pop.footnote({
+           start: 3,
+           end: 5,
+           text: "first!",
+           target: "contextLink"
+         });
+
+         pop.footnote({
+           start:7,
+           end: 11,
+           text: "second!",
+           target: "contextLink"
+         });
+ 
+         // play the video right away
+         pop.play();
+ 
+      }, false);
+    </script>
+    
 </head>
 <body>
-	<div class="col-sm-4"></div>
-
-	<div class="hello"></div>
+    <video autoplay controls class="main-video">
+        <source src="https://s3.amazonaws.com/nyt_tryouts/madrid.mp4" type="video/mp4"/>
+    </video>
+    <div id="contextLink" style="height:100px;width:100px;background-color:white;z-index:1000;"></div>
 </body>
 </html>

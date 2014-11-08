@@ -2,3 +2,12 @@ div {
 	background: green;
 	height: 100px;
 }
+
+.mainVideo {
+	width: 100%;
+}
+
+#contextLink {
+	z-index: 2;
+	position: fixed;
+}
