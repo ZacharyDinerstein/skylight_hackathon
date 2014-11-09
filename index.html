@@ -3,12 +3,51 @@
 <head>
 	<meta charset="UTF-8">
 	<script src="js/popcorn-complete.min.js"></script>
-	<script src="js/pop-app.js"></script>
 	<script src="js/jquery.js"></script>
 	<script src="js/script.js"></script>
 	<link rel="stylesheet" href="css/bootstrap.min.css">
 	<link rel="stylesheet" href="css/main.css">
 	<title>skylight</title>
+
+	<script>
+		document.addEventListener("DOMContentLoaded", function () {
+			var $pop = Popcorn(".main-video");
+			var $popOne = Popcorn(".outside-video");
+			var $popTwo = Popcorn(".outside-video2"); 
+
+			$pop.image({
+				start: 1,
+				end: 5,
+				src: "http://images.bwbx.io/cms/2013-02-14/econ_greenland08__01__630x420.jpg",
+				text: "Video one",
+				target: "contextLink"
+			});
+
+			$pop.image({
+				start: 6,
+				end: 9,
+				src: "http://2.bp.blogspot.com/-a-MdznfBb1U/UQwS-mif_nI/AAAAAAAAXQ4/HIeR1lY7DhM/s640/Greenland-town.jpg",
+				text: "Video two",
+				target: "contextLink1"
+			});
+
+			$pop.image({
+				start: 10,
+				end: 13,
+				src: "http://2.bp.blogspot.com/-jCqX9uaPmxs/UQwTMEUb_aI/AAAAAAAAXRA/U2kLUvzRsyk/s640/GreenlandIceberg.jpg",
+				text: "Video three",
+				target: "contextLink2"
+			});
+
+			$pop.play();
+
+			document.getElementById('contextLink').onclick = function () {
+				$($('.main-video').children()[0]).attr('src','https://s3.amazonaws.com/nyt_tryouts/nice.mp4');
+				$pop.play();
+			}
+
+		}, false);
+	</script>
 </head>
 <body>
 	<div class="container-fluid">
@@ -17,6 +56,12 @@
 				<video autoplay controls class="main-video">
 					<source src="https://s3.amazonaws.com/nyt_tryouts/madrid.mp4" type="video/mp4"/>
 				</video>
+				<!-- <video autoplay controls class="outside-video">
+					<source src="https://s3.amazonaws.com/nyt_tryouts/nice.mp4" type="video/mp4"/>
+				</video>
+				<video autoplay controls class="outside-video2">
+					<source src="https://s3.amazonaws.com/nyt_tryouts/glasgow.mp4" type="video/mp4"/>
+				</video> -->
 			</div>
 			<div class="popup-links">
 				<div id="contextLink"></div>
