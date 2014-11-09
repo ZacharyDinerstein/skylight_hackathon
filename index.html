@@ -23,10 +23,12 @@
 			var dataGutter = $(".data-gutter");
 
 			function indicateData(){
+				dataGutter.attr("automated","true");
 		        dataGutter.addClass("show-gutter");
 		        flashIcon();
 		        setTimeout(function(){
 		            dataGutter.removeClass("show-gutter");
+		            dataGutter.attr("automated","false");
 		        }, 3000)
 		    }
 
@@ -35,7 +37,7 @@
 		        icon.addClass("flash-icon");
 		        setTimeout(function(){
 		            icon.removeClass("flash-icon");
-		        }, 4000)
+		        }, 3000)
 		    }
 
 
@@ -72,11 +74,9 @@
 			$pop.code({
 				start: 3,
 				end: 4,
-				onStart:
-					function() {
-						indicateData();
-					},
-				target: "data-gutter"
+				onStart: function() {
+					indicateData();
+				}
 			});
 
 			$pop.code({
@@ -145,7 +145,7 @@
 				<div id="contextLink2"></div>
 				<div id="contextLink2"></div>
 			</div>
-			<div class="data-gutter col-xs-1">
+			<div class="data-gutter col-xs-1" automated="false">
 				<div class="relative">
 					<a href="img/Selection_Witness.jpg" data-lightbox="image-1" data-title="Selection Whitness'">
 						<i class="fa fa-file-text-o"></i>
