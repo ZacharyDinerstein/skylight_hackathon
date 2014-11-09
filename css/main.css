@@ -9,7 +9,6 @@ body {
 }
 
 main {
-	max-height: 100px;
 	position: relative;
 }
 
@@ -25,6 +24,23 @@ main {
 	top: 20px;
 	left: 20px;
 	width: 25%;	
+}
+
+.data-gutter-trigger {
+	position: absolute;
+	width: 100%;
+	bottom: 0px;
+	height: 100px;
+	visibilty: hidden;
+	z-index: 100;
+}
+
+.data-gutter {
+	position: absolute;
+	width: 100%;
+	bottom: -84px;
+	background-color: #fefefe;
+	height: 100px;
 }
 
 #contextLink {

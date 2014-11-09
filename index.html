@@ -4,19 +4,27 @@
 	<meta charset="UTF-8">
 	<script src="js/popcorn-complete.min.js"></script>
 	<script src="js/pop-app.js"></script>
+	<script src="js/jquery.js"></script>
+	<script src="js/script.js"></script>
 	<link rel="stylesheet" href="css/bootstrap.min.css">
 	<link rel="stylesheet" href="css/main.css">
 	<title>skylight</title>
 </head>
 <body>
 	<main>
-		<video autoplay controls class="main-video">
-			<source src="https://s3.amazonaws.com/nyt_tryouts/madrid.mp4" type="video/mp4"/>
-		</video>
+		<div class="main-video-wrapper">
+			<video autoplay controls class="main-video">
+				<source src="https://s3.amazonaws.com/nyt_tryouts/madrid.mp4" type="video/mp4"/>
+			</video>
+		</div>
 		<video autoplay controls class="side-video">
 			<source src="http://graphics8.nytimes.com/packages/video/newsgraphics/2013/0128-metopera/OperaTimeLapse_Lighting_970_970.mp4" type="video/mp4"/>
 		</video>
-		<!-- <div id="contextLink" style="height:100px;width:100px;background-color:white;z-index:1000;"></div> -->
+		<div id="contextLink"></div>
+		<div class="data-gutter-trigger"></div>
+		<div class="data-gutter">
+			
+		</div>
 	</main>
 </body>
 </html>
