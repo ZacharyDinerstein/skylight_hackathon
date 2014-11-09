@@ -8,8 +8,6 @@ main {
 
 .main-video {
 	width: 100%;
-	max-width: 1390px;
-	position: absolute;
 	z-index: -1;
 }
 
@@ -23,19 +21,17 @@ main {
 
 .data-gutter-trigger {
 	position: absolute;
-	width: 100%;
 	bottom: 0px;
-	height: 100px;
+	height: 200px;
 	visibilty: hidden;
 	z-index: 100;
 }
 
 .data-gutter {
 	position: absolute;
-	width: 100%;
-	bottom: -84px;
+	bottom: -150px;
 	background-color: #fefefe;
-	height: 100px;
+	height: 150px;
 }
 
 #contextLink,

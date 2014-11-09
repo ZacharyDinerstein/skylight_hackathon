@@ -1,11 +1,11 @@
 $( document ).ready(function() {
-    setMainVidHeight();
+    // setMainVidHeight();
     
     
 
     //***** User Triggers *****//
     
-    $(window).resize(setMainVidHeight);
+    // $(window).resize(setMainVidHeight);
     $(".data-gutter-trigger").hover(function(){
     	showDataGutter();
     	console.log("mouse in");
@@ -20,7 +20,7 @@ $( document ).ready(function() {
 
     function setMainVidHeight(){
     	var mainVidHeight = $(".main-video").height();
-   		$(".main-video-wrapper").height(mainVidHeight + 100);
+   		$(".main-video-wrapper").height(mainVidHeight + 78);
     }
 
     function showDataGutter(){
@@ -31,7 +31,7 @@ $( document ).ready(function() {
 
     function hideDataGutter(){
     	$(".data-gutter").animate({
-    		bottom: -81
+    		bottom: -150
     	}, 500)
     }
 
