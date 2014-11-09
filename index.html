@@ -20,6 +20,24 @@
 		document.addEventListener("DOMContentLoaded", function () {
 			var $pop = Popcorn(".main-video");
 			var $popOne = Popcorn(".outside-video");
+			var dataGutter = $(".data-gutter");
+
+			function indicateData(){
+		        dataGutter.addClass("show-gutter");
+		        flashIcon();
+		        setTimeout(function(){
+		            dataGutter.removeClass("show-gutter");
+		        }, 3000)
+		    }
+
+		    function flashIcon(){
+		        var icon = $('.fa-file-text-o');
+		        icon.addClass("flash-icon");
+		        setTimeout(function(){
+		            icon.removeClass("flash-icon");
+		        }, 4000)
+		    }
+
 
 			$pop.play();
 
@@ -39,7 +57,7 @@
 
 			$pop.code({
 				start: 5,
-				end: 9,
+				end: 8,
 				onStart: 
 					function( options ) {
 						document.getElementById('contextLink1').innerHTML = "<h3 data-scroll-reveal='enter from top over 3s'>Go outside the courtroom</h3>"
@@ -49,6 +67,26 @@
 						document.getElementById('contextLink1').innerHTML = "<button type='button' class='btn btn-inverse btn-sm secondButton'><i class='fa fa-play'> Outside Interviews</button>"
 					},
 				target: "contextLink1"
+			});
+
+			$pop.code({
+				start: 3,
+				end: 4,
+				onStart:
+					function() {
+						indicateData();
+					},
+				target: "data-gutter"
+			});
+
+			$pop.code({
+				start: 10,
+				end: 16,
+				onStart:
+					function() {
+						indicateData();
+					},
+				target: "data-gutter"
 			});
 
 			document.getElementById('contextLink').onclick = function () {
@@ -91,7 +129,7 @@
 	<div class="container-fluid">
 		<main>
 			<div class="main-video-wrapper">
-				<video play controls class="main-video active">
+				<video play loop controls class="main-video active">
 					<source src="https://s3.amazonaws.com/skylighthackathon/testimoy720.mp4" type="video/mp4"/>
 				</video>
 				<video controls class="outside-video">

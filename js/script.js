@@ -40,9 +40,9 @@ $( document ).ready(function() {
     function indicateData(){
         dataGutter.addClass("show-gutter");
         flashIcon();
-        setTimeout(function(){
-            dataGutter.removeClass("show-gutter");
-        }, 3000)
+        // setTimeout(function(){
+        //     dataGutter.removeClass("show-gutter");
+        // }, 3000)
     }
 
     function flashIcon(){
@@ -53,7 +53,7 @@ $( document ).ready(function() {
         }, 4000)
     }
 
-    indicateData();
+    // indicateData();
 
 
 
