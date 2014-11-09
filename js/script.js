@@ -29,10 +29,6 @@ $( document ).ready(function() {
     	}, 500)
     }
 
-
-
-
-    // ELSEWHERE, your code that needs to know the mouse position without an event
     function toggleGutter(){
         if (currentMousePos.y > 500) {
             dataGutter.addClass("show-gutter");
@@ -40,6 +36,24 @@ $( document ).ready(function() {
             dataGutter.removeClass("show-gutter");            
         }
     }
+
+    function indicateData(){
+        dataGutter.addClass("show-gutter");
+        flashIcon();
+        setTimeout(function(){
+            dataGutter.removeClass("show-gutter");
+        }, 3000)
+    }
+
+    function flashIcon(){
+        var icon = $('.fa-file-text-o');
+        icon.addClass("flash-icon");
+        setTimeout(function(){
+            icon.removeClass("flash-icon");
+        }, 4000)
+    }
+
+    indicateData();
 
 
 

@@ -72,6 +72,17 @@ main {
 	height: 70px;
 }
 
+.flash-icon {
+	-webkit-animation: flashing 1s infinite;
+}
+
+@-webkit-keyframes flashing {
+	0% {color: white; bottom:0px;}
+	50% {color: red; bottom: 2px;}
+	100% {color: white; bottom: 0px;}
+}
+
+
 #contextLink,
 #contextLink1,
 #contextLink2 {
