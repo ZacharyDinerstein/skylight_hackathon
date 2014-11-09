@@ -1,27 +1,21 @@
 $( document ).ready(function() {
-    // setMainVidHeight();
     
-    
+    var currentMousePos = { x: -1, y: -1 };
+    var dataGutter = $(".data-gutter");
+
 
     //***** User Triggers *****//
     
-    // $(window).resize(setMainVidHeight);
-    $(".data-gutter-trigger").hover(function(){
-    	showDataGutter();
-    	console.log("mouse in");
-    }, function(){
-    	hideDataGutter();
-    	console.log("mouse out");
-    })
+    $(document).mousemove(function(event) {
+        currentMousePos.x = event.pageX;
+        currentMousePos.y = event.pageY;
+        toggleGutter();
+    });
 
 
     
     //***** Functions *****//
 
-    function setMainVidHeight(){
-    	var mainVidHeight = $(".main-video").height();
-   		$(".main-video-wrapper").height(mainVidHeight + 78);
-    }
 
     function showDataGutter(){
     	$(".data-gutter").animate({
@@ -34,5 +28,19 @@ $( document ).ready(function() {
     		bottom: -150
     	}, 500)
     }
+
+
+
+
+    // ELSEWHERE, your code that needs to know the mouse position without an event
+    function toggleGutter(){
+        if (currentMousePos.y > 500) {
+            dataGutter.addClass("show-gutter");
+        } else {
+            dataGutter.removeClass("show-gutter");            
+        }
+    }
+
+
 
 });

@@ -24,17 +24,23 @@ main {
 	bottom: 0px;
 	height: 200px;
 	visibilty: hidden;
-	z-index: 100;
+	z-index: 10;
 }
 
 .data-gutter {
 	position: absolute;
 	bottom: -150px;
-	background-color: #fefefe;
+	background-color: rgba(0,0,0,.5);
 	height: 150px;
 	padding-top: 40px;
 	padding-left: 40px;
 	box-shadow: 0px -1px 10px rgba(10, 10, 10, .6);
+	text-align: center;
+	transition: bottom .2s ease-in-out;
+}
+
+.show-gutter {
+	bottom: 0px;
 }
 
 /***** Font Awesome *****/
@@ -42,6 +48,18 @@ main {
 	font-size: 5em;
 	margin-right: 3%;
 	text-shadow: 1px 1px 2px #666;
+	color: rgb(255, 253, 253);
+	z-index: 20;
+	transition: color .4s, font-size .1s;
+}
+
+.fa:hover {
+	color: red;
+	font-size: 5.5em;
+}
+
+.fa:last-child {
+	margin-right: 0px;
 }
 
 #contextLink,
