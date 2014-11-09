@@ -8,11 +8,7 @@ main {
 
 .main-video-wrapper {
 	width: 100%;
-<<<<<<< HEAD
-	height: 720px;
-=======
 	height: 780px;
->>>>>>> FETCH_HEAD
 	position: relative;
 }
 
@@ -35,6 +31,14 @@ main {
 	top: 20px;
 	left: 20px;
 	width: 25%;	
+}
+
+.btn {
+	color: rgba(0, 0, 0, 0.5);
+}
+
+.secondButton {
+	margin-top: 50px;
 }
 
 

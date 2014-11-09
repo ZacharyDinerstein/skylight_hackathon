@@ -30,9 +30,23 @@
 					},
 				onEnd:
 					function( options ) {
-						document.getElementById('contextLink').innerHTML = "<button type='button' class='btn btn-default btn-lg'>Star</button>"
+						document.getElementById('contextLink').innerHTML = "<button type='button' class='btn btn-inverse btn-sm'>Star</button>"
 					}, 
 				target: "contextLink"
+			});
+
+			$pop.code({
+				start: 5,
+				end: 7,
+				onStart: 
+					function( options ) {
+						document.getElementById('contextLink1').innerHTML = "<h3 data-scroll-reveal='enter from top over 3s'>Go outside the courtroom</h3>"
+					},
+				onEnd:
+					function( options ) {
+						document.getElementById('contextLink1').innerHTML = "<button type='button' class='btn btn-inverse btn-sm secondButton'>Star</button>"
+					},
+				target: "contextLink1"
 			});
 
 			document.getElementById('contextLink').onclick = function () {
@@ -47,29 +61,19 @@
 					$('.outside-video').removeClass('active');
 					$('.main-video').addClass('active');
 				}
+			}
 
-			$pop.code({
-				start: 5,
-				end: 7,
-				onStart: 
-					function( options ) {
-						document.getElementById('contextLink1').innerHTML = "<h3 data-scroll-reveal='enter from top over 3s'>Go outside the courtroom</h3>"
-					},
-				target: "contextLink1"
-			});
-
+			document.getElementById('contextLink1').onclick = function () {
+				$pop.pause();
+				$('.main-video').removeClass('active');
+				$('.outside-video2').addClass('active');
+				var $popTwo = Popcorn(".outside-video2");
+				$popTwo.load();
+				$popTwo.play();
 				document.getElementById('contextLink1').onclick = function () {
-					$pop.pause();
-					$('.main-video').removeClass('active');
-					$('.outside-video2').addClass('active');
-					var $popTwo = Popcorn(".outside-video2");
-					$popTwo.load();
-					$popTwo.play();
-					document.getElementById('contextLink1').onclick = function () {
-						$popTwo.pause();
-						$('.outside-video2').removeClass('active');
-						$('.main-video').addClass('active');
-					}
+					$popTwo.pause();
+					$('.outside-video2').removeClass('active');
+					$('.main-video').addClass('active');
 				}
 			}
 
@@ -95,6 +99,9 @@
 				<div id="contextLink1"></div>
 				<div id="contextLink2"></div>
 				<div id="contextLink2"></div>
+			</div>
+			<div class="videoController">
+				<i class="fa fa-play fa-5x" style="color:#999;top:40%;left:50%;position:absolute;z-index:5;margin-left:23px;margin-top:35px;"></i>
 			</div>
 			<div class="data-gutter col-xs-12">
 				<div class="row">
