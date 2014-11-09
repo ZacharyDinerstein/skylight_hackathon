@@ -38,16 +38,16 @@ main {
 
 .data-gutter {
 	position: absolute;
-	right: 0px;
+	right: -120px;
 	top: 0px;
 	background-color: rgba(0,0,0,.5);
 	height: 100%;
-	padding-top: 20%;
+	padding-top: 16.5%;
 	padding-left: 40px;
 	box-shadow: 0px -1px 10px rgba(10, 10, 10, .6);
 	text-align: center;
 	opacity: 0;
-	transition: bottom .2s, opacity .8s;
+	transition: right .2s, opacity .8s;
 	z-index: 100;
 }
 
@@ -56,7 +56,7 @@ main {
 }
 
 .show-gutter {
-	bottom: 0px;
+	right: 0px;
 	opacity: 1;
 }
 
@@ -72,7 +72,7 @@ main {
 	z-index: 20;
 	transition: color .4s; 
 	font-size .1s;
-	right: 0px;
+	right: 2px;
 }
 
 .fa:hover {
@@ -96,7 +96,7 @@ main {
 	position: relative;
 	width: 100%;
 	height: 70px;
-	margin-bottom: 40px;
+	margin-bottom: 60px;
 }
 
 .flash-icon {

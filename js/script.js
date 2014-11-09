@@ -30,7 +30,7 @@ $( document ).ready(function() {
     }
 
     function toggleGutter(){
-        if (currentMousePos.y > 500) {
+        if (currentMousePos.x > 1000) {
             dataGutter.addClass("show-gutter");
         } else {
             dataGutter.removeClass("show-gutter");            
