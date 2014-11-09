@@ -16,8 +16,6 @@ $( document ).ready(function() {
 
 
     
-
-
     //***** Functions *****//
 
     function setMainVidHeight(){
