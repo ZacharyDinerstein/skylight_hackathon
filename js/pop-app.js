@@ -3,8 +3,8 @@ document.addEventListener("DOMContentLoaded", function () {
 
 	pop.image({
 		start: 2,
-		end: 5,
-		href: "#side-video",
+		end: 10,
+		href: "#outside-video",
 		src: "http://images.bwbx.io/cms/2013-02-14/econ_greenland08__01__630x420.jpg",
 		text: "Video one",
 		target: "contextLink"

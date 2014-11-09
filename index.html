@@ -3,25 +3,99 @@
 <head>
 	<meta charset="UTF-8">
 	<script src="js/popcorn-complete.min.js"></script>
-	<script src="js/pop-app.js"></script>
 	<script src="js/jquery.js"></script>
 	<script src="js/script.js"></script>
+	<script src="js/scrollReveal.js"></script>
 	<link rel="stylesheet" href="css/bootstrap.min.css">
 	<link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">	
 	<link rel="stylesheet" href="css/main.css">
 	<title>skylight</title>
+	<script>
+        window.scrollReveal = new scrollReveal();
+    </script>
+	<script>
+		document.addEventListener("DOMContentLoaded", function () {
+			var $pop = Popcorn(".main-video");
+			var $popOne = Popcorn(".outside-video");
+
+			$pop.play();
+
+			$pop.code({
+				start: 1,
+				end: 4,
+				onStart: 
+					function( options ) {
+						document.getElementById('contextLink').innerHTML = "<h3 data-scroll-reveal='enter from top over 3s' class='sideNotification'>Click to hear from Ríos Montt's daughter</h3>"
+					},
+				onEnd:
+					function( options ) {
+						document.getElementById('contextLink').innerHTML = ""
+					}, 
+				target: "contextLink"
+			});
+
+			document.getElementById('contextLink').onclick = function () {
+				$('this').innerHTML = "<h3 data-scroll-reveal='enter from top over 3s'>Go back to the trial</h3>";
+				$pop.pause();
+				$('.main-video').removeClass('active');
+				$('.outside-video').addClass('active');
+				$popOne.load();
+				$popOne.play();
+				document.getElementById('contextLink').onclick = function () {
+					$popOne.pause();
+					$('.outside-video').removeClass('active');
+					$('.main-video').addClass('active');
+				}
+
+			$pop.code({
+				start: 5,
+				end: 7,
+				onStart: 
+					function( options ) {
+						document.getElementById('contextLink1').innerHTML = "<h3 data-scroll-reveal='enter from top over 3s'>Go outside the courtroom</h3>"
+					},
+				target: "contextLink1"
+			});
+
+				document.getElementById('contextLink1').onclick = function () {
+					$pop.pause();
+					$('.main-video').removeClass('active');
+					$('.outside-video2').addClass('active');
+					var $popTwo = Popcorn(".outside-video2");
+					$popTwo.load();
+					$popTwo.play();
+					document.getElementById('contextLink1').onclick = function () {
+						$popTwo.pause();
+						$('.outside-video2').removeClass('active');
+						$('.main-video').addClass('active');
+					}
+				}
+			}
+
+		}, false);
+	</script>
 </head>
 <body>
 	<div class="container-fluid">
 		<main>
 			<div class="main-video-wrapper">
-				<video autoplay controls class="main-video">
-					<source src="https://s3.amazonaws.com/nyt_tryouts/madrid.mp4" type="video/mp4"/>
+				<video play controls class="main-video active">
+					<source src="https://s3.amazonaws.com/skylighthackathon/testimoy720.mp4" type="video/mp4"/>
+				</video>
+				<video controls class="outside-video">
+					<source src="https://s3.amazonaws.com/skylighthackathon/zury720.mp4" type="video/mp4"/>
+				</video>
+				<video play controls class="outside-video2">
+					<source src="https://s3.amazonaws.com/skylighthackathon/vox720.mp4" type="video/mp4"/>
+				</video>
+				<video play controls class="outside-video3">
+					<source src="https://s3.amazonaws.com/skylighthackathon/orlando720.mp4" type="video/mp4"/>
 				</video>
 			</div>
 			<div class="popup-links">
 				<div id="contextLink"></div>
 				<div id="contextLink1"></div>
+				<div id="contextLink2"></div>
 				<div id="contextLink2"></div>
 			</div>
 			<div class="data-gutter col-xs-12">
