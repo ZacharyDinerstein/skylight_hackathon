@@ -7,8 +7,10 @@
 	<script src="js/script.js"></script>
 	<script src="js/scrollReveal.js"></script>
 	<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+	<script src="js/lightbox.min.js"></script>
 	<link rel="stylesheet" href="css/bootstrap.min.css">
 	<link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">	
+	<link rel="stylesheet" href="css/lightbox.css">
 	<link rel="stylesheet" href="css/main.css">
 	<title>skylight</title>
 	<script>
@@ -30,36 +32,38 @@
 					},
 				onEnd:
 					function( options ) {
-						document.getElementById('contextLink').innerHTML = "<button type='button' class='btn btn-inverse btn-sm'>Star</button>"
+						document.getElementById('contextLink').innerHTML = "<button type='button' class='btn btn-inverse btn-sm'><i class='fa fa-play'></i> Montt's Daughter</button>"
 					}, 
 				target: "contextLink"
 			});
 
 			$pop.code({
 				start: 5,
-				end: 7,
+				end: 9,
 				onStart: 
 					function( options ) {
 						document.getElementById('contextLink1').innerHTML = "<h3 data-scroll-reveal='enter from top over 3s'>Go outside the courtroom</h3>"
 					},
 				onEnd:
 					function( options ) {
-						document.getElementById('contextLink1').innerHTML = "<button type='button' class='btn btn-inverse btn-sm secondButton'>Star</button>"
+						document.getElementById('contextLink1').innerHTML = "<button type='button' class='btn btn-inverse btn-sm secondButton'><i class='fa fa-play'> Outside Interviews</button>"
 					},
 				target: "contextLink1"
 			});
 
 			document.getElementById('contextLink').onclick = function () {
-				$('this').innerHTML = "<h3 data-scroll-reveal='enter from top over 3s'>Go back to the trial</h3>";
 				$pop.pause();
 				$('.main-video').removeClass('active');
 				$('.outside-video').addClass('active');
 				$popOne.load();
 				$popOne.play();
+				$(document.getElementById('contextLink').innerHTML = "<h3 data-scroll-reveal='enter from top over 3s'>Return</h3>");
 				document.getElementById('contextLink').onclick = function () {
 					$popOne.pause();
 					$('.outside-video').removeClass('active');
 					$('.main-video').addClass('active');
+					$pop.play();
+					$(document.getElementById('contextLink').innerHTML = "<button type='button' class='btn btn-inverse btn-sm'><i class='fa fa-play'> Montt's Daughter</button>")
 				}
 			}
 
@@ -70,10 +74,13 @@
 				var $popTwo = Popcorn(".outside-video2");
 				$popTwo.load();
 				$popTwo.play();
+				$(document.getElementById('contextLink1').innerHTML = "<h3 data-scroll-reveal='enter from top over 3s'>Return</h3>")
 				document.getElementById('contextLink1').onclick = function () {
 					$popTwo.pause();
 					$('.outside-video2').removeClass('active');
 					$('.main-video').addClass('active');
+					$pop.play();
+					$(document.getElementById('contextLink1').innerHTML = "<button type='button' class='btn btn-inverse btn-sm secondButton'><i class='fa fa-play'> Outside Interviews</button>");
 				}
 			}
 
@@ -100,24 +107,28 @@
 				<div id="contextLink2"></div>
 				<div id="contextLink2"></div>
 			</div>
-			<div class="videoController">
-				<i class="fa fa-play fa-5x" style="color:#999;top:40%;left:50%;position:absolute;z-index:5;margin-left:23px;margin-top:35px;"></i>
-			</div>
+
 			<div class="data-gutter col-xs-12">
 				<div class="row">
 					<div class="col-xs-offset-3 col-xs-2">
 						<div class="relative">
-							<i class="fa fa-file-text-o"></i>
+							<a href="img/Selection_Witness.jpg" data-lightbox="image-1" data-title="Selection Whitness'">
+								<i class="fa fa-file-text-o"></i>
+							</a>
 						</div>
 					</div>
 					<div class="col-xs-2">
 						<div class="relative">
-							<i class="fa fa-newspaper-o"></i>
+							<a href="img/Prensa_Libre_130322.jpg" data-lightbox="image-2" data-title="From 'Prensa Libre'">
+								<i class="fa fa-newspaper-o"></i>
+							</a>
 						</div>
 					</div>
 					<div class="col-xs-2">
 						<div class="relative">
-							<i class="fa fa-camera"></i>
+							<a href="img/Ixil_Triangle_2.jpg" data-lightbox="image-3" data-title="Triangle">
+								<i class="fa fa-camera"></i>
+							</a>
 						</div>
 					</div>
 				</div>

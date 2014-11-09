@@ -34,7 +34,7 @@ main {
 }
 
 .btn {
-	color: rgba(0, 0, 0, 0.5);
+	background-color: rgba(0, 0, 0, 0.7);
 }
 
 .secondButton {
@@ -71,7 +71,7 @@ main {
 
 
 /***** Font Awesome *****/
-.fa {
+.data-gutter .fa {
 	font-size: 5em;
 	margin-right: 3%;
 	text-shadow: 1px 1px 2px #666;
@@ -81,12 +81,12 @@ main {
 	font-size .1s;
 }
 
-.fa:hover {
+.data-gutter .fa:hover {
 	color: red;
 	cursor: pointer;
 }
 
-.fa:last-child {
+.data-gutter .fa:last-child {
 	margin-right: 0px;
 }
 
