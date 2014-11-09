@@ -47,3 +47,12 @@ main {
 	left: 20px;
 	width: 25%;	
 }
+
+
+
+
+/***** Bootstrap Overrides *****/
+
+.container-fluid {
+	padding: 0px;
+}
