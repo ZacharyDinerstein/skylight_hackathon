@@ -12,6 +12,8 @@
 	<link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">	
 	<link rel="stylesheet" href="css/lightbox.css">
 	<link rel="stylesheet" href="css/main.css">
+	<link href='http://fonts.googleapis.com/css?family=Oswald' rel='stylesheet' type='text/css'>
+	<link href='http://fonts.googleapis.com/css?family=Rosario:400,700,400italic' rel='stylesheet' type='text/css'>
 	<title>skylight</title>
 	<script>
         window.scrollReveal = new scrollReveal();
@@ -40,36 +42,35 @@
 		        }, 3000)
 		    }
 
-
 			$pop.play();
 
 
 			//***** Context Link Firing Times *****//
 
 			$pop.code({
-				start: 1,
-				end: 4,
+				start: 39,
+				end: 44,
 				onStart: 
 					function( options ) {
-						document.getElementById('contextLink').innerHTML = "<h3 data-scroll-reveal='enter from top over 3s' class='sideNotification'>Click to hear from Ríos Montt's daughter</h3>"
+						document.getElementById('contextLink').innerHTML = "<button type='button' class='btn btn-inverse btn-sm'><i class='fa fa-play'></i> Hear from other Guatemalans </button>"
 					},
 				onEnd:
 					function( options ) {
-						document.getElementById('contextLink').innerHTML = "<button type='button' class='btn btn-inverse btn-sm'><i class='fa fa-play'></i> Montt's Daughter</button>"
+						document.getElementById('contextLink').innerHTML = "<button type='button' class='btn btn-inverse btn-sm archivalButton'><i class='fa fa-play'></i></button>"
 					}, 
 				target: "contextLink"
 			});
 
 			$pop.code({
-				start: 5,
-				end: 8,
+				start: 60,
+				end: 65,
 				onStart: 
 					function( options ) {
-						document.getElementById('contextLink1').innerHTML = "<h3 data-scroll-reveal='enter from top over 3s'>Go outside the courtroom</h3>"
+						document.getElementById('contextLink1').innerHTML = "<button type='button' class='btn btn-inverse btn-sm secondButton'><i class='fa fa-play'></i> Hear from Ríos Montt's daughter</button>"
 					},
 				onEnd:
 					function( options ) {
-						document.getElementById('contextLink1').innerHTML = "<button type='button' class='btn btn-inverse btn-sm secondButton'><i class='fa fa-play'> Outside Interviews</button>"
+						document.getElementById('contextLink1').innerHTML = "<button type='button' class='btn btn-inverse btn-sm secondButton archivalButton'><i class='fa fa-play'></i></button>"
 					},
 				target: "contextLink1"
 			});
@@ -111,13 +112,13 @@
 				$('.outside-video').addClass('active');
 				$popOne.load();
 				$popOne.play();
-				$(document.getElementById('contextLink').innerHTML = "<h3 data-scroll-reveal='enter from top over 3s'>Return</h3>");
+				$(document.getElementById('contextLink').innerHTML = "<button type='button' class='btn btn-inverse btn-sm'>Return to Trial</button>");
 				document.getElementById('contextLink').onclick = function () {
 					$popOne.pause();
 					$('.outside-video').removeClass('active');
 					$('.main-video').addClass('active');
 					$pop.play();
-					$(document.getElementById('contextLink').innerHTML = "<button type='button' class='btn btn-inverse btn-sm'><i class='fa fa-play'> Montt's Daughter</button>")
+					$(document.getElementById('contextLink').innerHTML = "<button type='button' class='btn btn-inverse btn-sm archivalButton'><i class='fa fa-play'></button>")
 				}
 			}
 
@@ -128,13 +129,13 @@
 				var $popTwo = Popcorn(".outside-video2");
 				$popTwo.load();
 				$popTwo.play();
-				$(document.getElementById('contextLink1').innerHTML = "<h3 data-scroll-reveal='enter from top over 3s'>Return</h3>")
+				$(document.getElementById('contextLink1').innerHTML = "<button type='button' class='btn btn-inverse btn-sm secondButton'>Return to Trial</button>")
 				document.getElementById('contextLink1').onclick = function () {
 					$popTwo.pause();
 					$('.outside-video2').removeClass('active');
 					$('.main-video').addClass('active');
 					$pop.play();
-					$(document.getElementById('contextLink1').innerHTML = "<button type='button' class='btn btn-inverse btn-sm secondButton'><i class='fa fa-play'> Outside Interviews</button>");
+					$(document.getElementById('contextLink1').innerHTML = "<button type='button' class='btn btn-inverse btn-sm secondButton archivalButton'><i class='fa fa-play'></i></button>");
 				}
 			}
 
@@ -161,10 +162,10 @@
 					<source src="https://s3.amazonaws.com/skylighthackathon/testimoy720.mp4" type="video/mp4"/>
 				</video>
 				<video controls class="outside-video">
-					<source src="https://s3.amazonaws.com/skylighthackathon/zury720.mp4" type="video/mp4"/>
+					<source src="https://s3.amazonaws.com/skylighthackathon/vox720.mp4" type="video/mp4"/>
 				</video>
 				<video play controls class="outside-video2">
-					<source src="https://s3.amazonaws.com/skylighthackathon/vox720.mp4" type="video/mp4"/>
+					<source src="https://s3.amazonaws.com/skylighthackathon/zury720.mp4" type="video/mp4"/>
 				</video>
 			</div>
 			<div class="popup-links">
