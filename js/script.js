@@ -14,10 +14,6 @@ $( document ).ready(function() {
         }        
     });
 
-    $("#lightboxOverlay").click(function(){
-        alert("Hey");
-    });
-
     
     //***** Functions *****//
 
