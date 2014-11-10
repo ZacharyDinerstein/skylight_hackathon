@@ -22,18 +22,18 @@
 			var $popOne = Popcorn(".outside-video");
 			var dataGutter = $(".data-gutter");
 
-			function indicateData(){
+			function indicateData(whichIcon){
 				dataGutter.attr("automated","true");
 		        dataGutter.addClass("show-gutter");
-		        flashIcon();
+		        flashIcon(whichIcon);
 		        setTimeout(function(){
 		            dataGutter.removeClass("show-gutter");
 		            dataGutter.attr("automated","false");
 		        }, 3000)
 		    }
 
-		    function flashIcon(){
-		        var icon = $('.fa-file-text-o');
+		    function flashIcon(targetIcon){
+		        var icon = $(targetIcon);
 		        icon.addClass("flash-icon");
 		        setTimeout(function(){
 		            icon.removeClass("flash-icon");
@@ -42,6 +42,9 @@
 
 
 			$pop.play();
+
+
+			//***** Context Link Firing Times *****//
 
 			$pop.code({
 				start: 1,
@@ -71,23 +74,17 @@
 				target: "contextLink1"
 			});
 
+
+			//***** Data Gutter Firing Times *****//
+
 			$pop.code({
 				start: 3,
 				end: 4,
 				onStart: function() {
-					indicateData();
+					indicateData(".fa-file-text-o");
 				}
 			});
 
-			$pop.code({
-				start: 10,
-				end: 16,
-				onStart:
-					function() {
-						indicateData();
-					},
-				target: "data-gutter"
-			});
 
 			document.getElementById('contextLink').onclick = function () {
 				$pop.pause();
