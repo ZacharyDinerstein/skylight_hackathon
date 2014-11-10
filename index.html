@@ -80,27 +80,30 @@
 			$pop.code({
 				start: 3,
 				onStart: function() {
-					indicateData(".fa-file-text-o");
+					indicateData(".fa-camera");
 				},
 				target: "data-gutter"
 			});
 
+			$pop.code({
+				start: 14,
+				onStart: function() {
+					indicateData(".fa-file-text-o");
+				},
+				target: "data-gutter"
+			});	
 
 			$pop.code({
-				start: 7,
-				onStart: function() {
+				start: 94,
+				onStart: function(){
 					indicateData(".fa-newspaper-o");
 				},
 				target: "data-gutter"
 			});
 
-			$pop.code({
-				start: 11,
-				onStart: function() {
-					indicateData(".fa-camera");
-				},
-				target: "data-gutter"
-			});			
+
+
+			//***** User Triggers *****//
 
 			document.getElementById('contextLink').onclick = function () {
 				$pop.pause();
@@ -135,6 +138,18 @@
 				}
 			}
 
+			// When Icon is clicked, pause video
+			$('.fa').click(function(){
+		        $pop.pause();
+		    });
+
+			//When body of doc is clicked, play video
+		    $('html').click(function(e) {                    
+			   if(!$(e.target).hasClass('lb-container') ){
+			       $pop.play();
+			   }
+			}); 
+
 		}, false);
 	</script>
 </head>
@@ -161,17 +176,17 @@
 			<div class="data-gutter col-xs-1" automated="false">
 				<div class="relative">
 					<a href="img/Selection_Witness.jpg" data-lightbox="image-1" data-title="Selection Whitness'">
-						<i class="fa fa-file-text-o"></i>
+						<i class="fa fa-camera"></i>
 					</a>
 				</div>
 				<div class="relative">
 					<a href="img/Prensa_Libre_130322.jpg" data-lightbox="image-2" data-title="From 'Prensa Libre'">
-						<i class="fa fa-newspaper-o"></i>
+						<i class="fa fa-file-text-o"></i>
 					</a>
 				</div>
 				<div class="relative">
 					<a href="img/Ixil_Triangle_2.jpg" data-lightbox="image-3" data-title="Triangle">
-						<i class="fa fa-camera"></i>
+						<i class="fa fa-newspaper-o"></i>
 					</a>
 				</div>
 			</div>
