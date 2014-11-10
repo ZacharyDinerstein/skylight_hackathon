@@ -79,12 +79,28 @@
 
 			$pop.code({
 				start: 3,
-				end: 4,
 				onStart: function() {
 					indicateData(".fa-file-text-o");
-				}
+				},
+				target: "data-gutter"
 			});
 
+
+			$pop.code({
+				start: 7,
+				onStart: function() {
+					indicateData(".fa-newspaper-o");
+				},
+				target: "data-gutter"
+			});
+
+			$pop.code({
+				start: 11,
+				onStart: function() {
+					indicateData(".fa-camera");
+				},
+				target: "data-gutter"
+			});			
 
 			document.getElementById('contextLink').onclick = function () {
 				$pop.pause();
