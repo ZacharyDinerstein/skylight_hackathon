@@ -22,7 +22,9 @@
 		document.addEventListener("DOMContentLoaded", function () {
 			var $pop = Popcorn(".main-video");
 			var $popOne = Popcorn(".outside-video");
+			var $popTwo = Popcorn(".outside-video2");
 			var dataGutter = $(".data-gutter");
+
 
 			function indicateData(whichIcon){
 				dataGutter.attr("automated","true");
@@ -126,7 +128,7 @@
 				$pop.pause();
 				$('.main-video').removeClass('active');
 				$('.outside-video2').addClass('active');
-				var $popTwo = Popcorn(".outside-video2");
+				// var $popTwo = Popcorn(".outside-video2");
 				$popTwo.load();
 				$popTwo.play();
 				$(document.getElementById('contextLink1').innerHTML = "<button type='button' class='btn btn-inverse btn-sm secondButton'>Return to Trial</button>")
@@ -139,15 +141,19 @@
 				}
 			}
 
-			// When Icon is clicked, pause video
+			// When Icon is clicked, pause video.
 			$('.fa').click(function(){
 		        $pop.pause();
+		        $popOne.pause();
+		        $popTwo.pause();
 		    });
 
-			//When body of doc is clicked, play video
+			//When body of doc is clicked, play current video.
 		    $('html').click(function(e) {                    
 			   if(!$(e.target).hasClass('lb-container') ){
-			       $pop.play();
+			        var currentVideoClass = $(".active").attr("class").split(' ')[0];
+			        var currentVideo = Popcorn("." + currentVideoClass);
+			        currentVideo.play();
 			   }
 			}); 
 
@@ -158,13 +164,13 @@
 	<div class="container-fluid">
 		<main>
 			<div class="main-video-wrapper">
-				<video play loop controls class="main-video active">
+				<video play loop controls class="main-video active" pop-num="pop">
 					<source src="https://s3.amazonaws.com/skylighthackathon/testimoy720.mp4" type="video/mp4"/>
 				</video>
-				<video controls class="outside-video">
+				<video controls class="outside-video" pop-num="popOne">
 					<source src="https://s3.amazonaws.com/skylighthackathon/vox720.mp4" type="video/mp4"/>
 				</video>
-				<video play controls class="outside-video2">
+				<video play controls class="outside-video2" pop-num="popTwo">
 					<source src="https://s3.amazonaws.com/skylighthackathon/zury720.mp4" type="video/mp4"/>
 				</video>
 			</div>
